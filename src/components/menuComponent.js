@@ -8,8 +8,7 @@ class Menu extends Component{
 
             this.state = {
                 selectedDish: null
-                
-            };
+            }
     }
 
     onDishSelect(dish){
@@ -35,7 +34,6 @@ class Menu extends Component{
         }
 
     }
-
 
     render(){
 
