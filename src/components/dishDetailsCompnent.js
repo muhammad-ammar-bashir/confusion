@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import { Card, CardTitle, CardBody, CardImgOverlay, CardImg, CardText } from 'reactstrap';
+import { Card, CardTitle, CardImg, CardText } from 'reactstrap';
+
+
+
 class DishDetails extends Component {
     constructor(props) {
         super(props);
+        console.log("DISH DETAIL",props);
     }
 
     renderComments() {
         return (
             <div>
-                {this.props.selectedDish.comments.map((comment) => {
+                {this.props.dish[0].comments.map((comment) => {
                     return (
                         <div className="continer">
                             <div className="row">
@@ -26,7 +30,7 @@ class DishDetails extends Component {
     }
 
     render() {
-        if (this.props.selectedDish !== null) {
+        if (this.props.dish[0] !== null && this.props.dish[0] !== undefined ) {
             
             return (
                 
@@ -34,10 +38,10 @@ class DishDetails extends Component {
                     <div className="row">
                         <div className="col-12 col-md-5 m-1">
                             <Card>
-                                <CardImg width="100%" src={this.props.selectedDish.image} />
-                                <CardTitle> {this.props.selectedDish.name} </CardTitle>
-                                <CardText> {this.props.selectedDish.description} </CardText>
-                                <CardText> {this.props.selectedDish.price} </CardText>
+                                <CardImg width="100%" src={this.props.dish[0].image} />
+                                <CardTitle> {this.props.dish[0].name} </CardTitle>
+                                <CardText> {this.props.dish[0].description} </CardText>
+                                <CardText> {this.props.dish[0].price} </CardText>
                             </Card>
                         </div>
 
